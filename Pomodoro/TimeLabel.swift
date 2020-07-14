@@ -22,7 +22,7 @@ struct TimeLabel: View {
                     .fontWeight(.bold)
                     .frame(width: 100, height: 100)
                     .foregroundColor(Color(.systemGray))
-                    .onLongPressGesture(perform: model.resetFocusTimer)
+                    .onLongPressGesture(perform: model.resetPomodoroTimer)
             } else {
                 Image(systemName: completedIcon)
                     .font(.largeTitle)

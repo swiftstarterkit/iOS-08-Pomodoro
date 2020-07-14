@@ -21,7 +21,6 @@ class PomodoroModel: ObservableObject {
     }
     
     func resetPomodoroTimer() {
-        resetTime()
         invalidateTimer()
     }
 }
