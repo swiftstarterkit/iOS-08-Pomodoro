@@ -11,7 +11,6 @@ class PomodoroModel: ObservableObject {
     
     @Published var timeStart: Float = 0
     @Published var timeRemaining: Float = 0
-    @Published var progressBarHeight: CGFloat = 350
     @Published var timerActive: Bool = false
     
     var timer: Timer?
