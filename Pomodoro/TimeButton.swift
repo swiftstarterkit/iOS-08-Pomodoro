@@ -29,8 +29,8 @@ struct TimeButton: View {
             .font(.largeTitle)
             .foregroundColor(color)
             .opacity(opacity)
-            .onTapGesture() { self.model.runFocusTimer(time: time) }
-            .onLongPressGesture(perform: model.resetFocusTimer)
+            .onTapGesture() { self.model.runPomodoroTimer(time: time) }
+            .onLongPressGesture(perform: model.resetPomodoroTimer)
         
     }
 }

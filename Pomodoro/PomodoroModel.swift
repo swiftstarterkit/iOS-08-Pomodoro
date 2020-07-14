@@ -15,12 +15,12 @@ class PomodoroModel: ObservableObject {
     
     var timer: Timer?
     
-    func runFocusTimer(time: Float) {
+    func runPomodoroTimer(time: Float) {
         invalidateTimer()
         initializeTimer(time: time)
     }
     
-    func resetFocusTimer() {
+    func resetPomodoroTimer() {
         resetTime()
         invalidateTimer()
     }
