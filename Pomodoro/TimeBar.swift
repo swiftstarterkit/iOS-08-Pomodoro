@@ -15,6 +15,14 @@ struct TimeBar: View {
     let height: CGFloat = 350
     let cornerRadius: CGFloat = 5
     
+    var progressBarHeight: CGFloat {
+        if  model.timerActive == true {
+            return CGFloat(model.timeRemaining / model.timeStart) * 350
+        } else {
+            return 350
+        }
+    }
+    
     var progressBarColor: Color {
         if model.timeStart == 10 {
             return Color(.systemIndigo)
@@ -38,7 +46,7 @@ struct TimeBar: View {
                 Spacer()
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .foregroundColor(progressBarColor)
-                    .frame(width: width, height: model.progressBarHeight)
+                    .frame(width: width, height: progressBarHeight)
             }
             
         }   .frame(width: width, height: height)

@@ -41,25 +41,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7A3F441C24BE1B2100D62A24 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				7A7D1DA924BE17A2007C5453 /* PomodoroModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		7A3F441D24BE1B2A00D62A24 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				7A7D1D9C24BE1714007C5453 /* ContentView.swift */,
-				7A7D1DAB24BE1855007C5453 /* TimeBar.swift */,
-				7A7D1DAD24BE18BD007C5453 /* TimeLabel.swift */,
-				7A7D1DAF24BE19EC007C5453 /* TimeButton.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		7A7D1D8E24BE1714007C5453 = {
 			isa = PBXGroup;
 			children = (
@@ -80,8 +61,11 @@
 			isa = PBXGroup;
 			children = (
 				7A7D1D9A24BE1714007C5453 /* PomodoroApp.swift */,
-				7A3F441C24BE1B2100D62A24 /* Models */,
-				7A3F441D24BE1B2A00D62A24 /* Views */,
+				7A7D1DA924BE17A2007C5453 /* PomodoroModel.swift */,
+				7A7D1D9C24BE1714007C5453 /* ContentView.swift */,
+				7A7D1DAB24BE1855007C5453 /* TimeBar.swift */,
+				7A7D1DAD24BE18BD007C5453 /* TimeLabel.swift */,
+				7A7D1DAF24BE19EC007C5453 /* TimeButton.swift */,
 				7A7D1D9E24BE1715007C5453 /* Assets.xcassets */,
 				7A7D1DA324BE1715007C5453 /* Info.plist */,
 				7A7D1DA024BE1715007C5453 /* Preview Content */,

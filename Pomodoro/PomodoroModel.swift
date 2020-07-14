@@ -1,5 +1,5 @@
 //
-//  TimeRobot.swift
+//  PomodoroModel.swift
 //  Pomodoro
 //
 //  Created by Pao Yu on 2020-07-14.
@@ -17,13 +17,12 @@ class PomodoroModel: ObservableObject {
     var timer: Timer?
     
     func runFocusTimer(time: Float) {
-        fillProgressBar()
         invalidateTimer()
         initializeTimer(time: time)
     }
     
     func resetFocusTimer() {
-        fillProgressBar()
+        resetTime()
         invalidateTimer()
     }
 }
@@ -37,17 +36,18 @@ extension PomodoroModel {
         timeStart = time
         timeRemaining = time
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in self.runTimerActions() }
+        // "withTimeInterval" parameter can be changed to "60.0" to convert timer to minutes instead of seconds.
     }
     
     func invalidateTimer() {
         timerActive = false
         timer?.invalidate()
+        resetTime()
     }
     
     func runTimerActions() {
-        if timeRemaining > 0  {
+        if timeRemaining > 1  {
             reduceTime()
-            resizeProgressBar()
         } else {
             invalidateTimer()
         }
@@ -57,12 +57,9 @@ extension PomodoroModel {
         timeRemaining = timeRemaining - 1
     }
     
-    func resizeProgressBar() {
-        progressBarHeight = CGFloat(timeRemaining / timeStart) * 350
-    }
-    
-    func fillProgressBar() {
-        progressBarHeight = 350
+    func resetTime() {
+        timeStart = 0
+        timeRemaining = 0
     }
 }
 
