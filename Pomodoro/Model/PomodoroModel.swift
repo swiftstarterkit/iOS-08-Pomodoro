@@ -32,7 +32,7 @@ extension PomodoroModel {
     func initializeTimer(time: Float) {
         timerActive = true
         timeStart = time
-        timeRemaining = time
+        timeRemaining = timeStart
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in self.runTimerActions() }
         // "withTimeInterval" parameter can be changed to "60.0" to convert timer to minutes instead of seconds.
     }
@@ -40,24 +40,27 @@ extension PomodoroModel {
     func invalidateTimer() {
         timerActive = false
         timer?.invalidate()
-        resetTime()
+        timeStart = 0
+        timeRemaining = 0
     }
     
     func runTimerActions() {
-        if timeRemaining > 1  {
+        
+        if timeRemaining > 1 {
             reduceTime()
+            checkRemainingTime()
         } else {
             invalidateTimer()
         }
+        
     }
     
     func reduceTime() {
-        timeRemaining = timeRemaining - 1
+        timeRemaining -= 1
     }
     
-    func resetTime() {
-        timeStart = 0
-        timeRemaining = 0
+    func checkRemainingTime() {
+        print("Time remaining is \(timeRemaining)")
     }
 }
 

@@ -19,7 +19,7 @@ struct TimeBar: View {
         if  model.timerActive == true {
             return CGFloat(model.timeRemaining / model.timeStart) * 350
         } else {
-            return 350
+            return 0
         }
     }
     
@@ -31,7 +31,7 @@ struct TimeBar: View {
         } else if model.timeStart == 50 {
             return Color(.systemPurple)
         } else {
-            return Color(.systemGray5)
+            return Color(.systemGreen)
         }
     }
     
